@@ -1,7 +1,8 @@
 import argparse
+
 import nltk
 
-from search import find_word
+from word_sauce.search import find_word
 
 
 def run(args: argparse.Namespace) -> None:
@@ -14,19 +15,25 @@ def run(args: argparse.Namespace) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
-        description='Play the Word Sauce game.'
+        description='Play the Word Sauce game.',
     )
 
-    parser.add_argument('--word', '-w', type=str, required=True,
-                        help='The word list to use.')
-    parser.add_argument('-n', type=int, required=True,
-                        help='The length of the word to find.')
-    parser.add_argument('--exclude', '-e', type=str, nargs='+', default=None,
-                        help='Words to exclude from the search.')
+    parser.add_argument(
+        '--word', '-w', type=str, required=True,
+        help='The word list to use.',
+    )
+    parser.add_argument(
+        '-n', type=int, required=True,
+        help='The length of the word to find.',
+    )
+    parser.add_argument(
+        '--exclude', '-e', type=str, nargs='+', default=None,
+        help='Words to exclude from the search.',
+    )
 
     args = parser.parse_args()
 
-    print(f'Word Sauce v0.1')
+    print('Word Sauce v0.1')
     print(f'Possible English words: {len(nltk.corpus.words.words()):,} words')
 
     run(args)

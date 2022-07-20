@@ -11,12 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-from search import find_word
+from word_sauce.search import find_word
 
 
 def prompt() -> int:
-    print(f'Word Sauce v0.1')
+    print('Word Sauce v0.1')
 
     word = input('Enter the scrambled word: ')
     n = int(input('Length of the word to find: '))
