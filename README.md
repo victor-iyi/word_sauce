@@ -39,14 +39,13 @@ options:
 For example:
 
 ```sh
-$ python main.py -w tlepoi -n 4
+$ python main.py -w lorem -n 4
 Word Sauce v0.1
 Possible English words: 236,736 words
-Possible English words: 236,736 words
-Searching for 4-letter word in 360 possible words.
+Searching for 4-letter word in 120 possible words.
 
-Found 23 possible words.
-{'peto', 'piet', 'pelt', 'tipe', 'teli', 'topi', 'pole', 'ilot', 'lite', 'teil', 'tope', 'plot', 'olpe', 'tile', 'pile', 'poet', 'polt', 'pote', 'lope', 'toil', 'tole', 'poil', 'lote'}
+Found 8 possible words.
+{'merl', 'orle', 'mole', 'omer', 'mero', 'more', 'lore', 'role'}
 ```
 
 If you require a prompt, then run `prompt.py` instead.
@@ -54,13 +53,13 @@ If you require a prompt, then run `prompt.py` instead.
 ```sh
 $ python prompt.py
 Word Sauce v0.1
-Enter the scrambled word: tlepoi
+Enter the scrambled word: lorem
 Length of the word to find: 4
 Possible English words: 236,736 words
 Searching for 4-letter word in 360 possible words.
 
-Found 23 possible words.
-{'tipe', 'plot', 'lote', 'pote', 'piet', 'pile', 'pole', 'toil', 'olpe', 'teil', 'tope', 'tile', 'topi', 'lite', 'polt', 'lope', 'poet', 'peto', 'teli', 'pelt', 'poil', 'ilot', 'tole'}
+Found 8 possible words.
+{'merl', 'orle', 'mole', 'omer', 'mero', 'more', 'lore', 'role'}
 ```
 
 ## Contribution

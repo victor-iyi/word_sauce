@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import nltk.corpus
 from word_sauce.search import find_word
 
 
@@ -22,6 +23,7 @@ def prompt() -> int:
 
     words = find_word(word=word, n=n)
 
+    print(f'Possible English words: {len(nltk.corpus.words.words()):,} words')
     print(f'Found {len(words):,} possible words.')
     print(words)
 

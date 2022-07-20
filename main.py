@@ -1,6 +1,6 @@
 import argparse
 
-import nltk
+import nltk.corpus
 
 from word_sauce.search import find_word
 

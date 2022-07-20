@@ -43,7 +43,6 @@ def find_word(word: str, n: int, exclude: set[str] | None = None) -> set[str]:
         for w in itertools.permutations(word, n)
     ]
 
-    print(f'Possible English words: {len(english_words):,} words')
     print(
         f'Searching for {n}-letter word in '
         f'{len(possible_words):,} possible words.\n',
