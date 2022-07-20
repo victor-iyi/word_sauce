@@ -11,8 +11,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 import itertools
+
 import nltk
 
 
@@ -28,13 +28,26 @@ def find_word(word: str, n: int, exclude: set[str] | None = None) -> set[str]:
     Returns:
         set[str]: Set of all possible words of length `n` in `word`.
     """
+    if len(word) == 0:
+        raise ValueError('Word cannot be empty.')
+
+    if n > len(word):
+        raise ValueError('n must be less than or equal to len(word)')
+
+    if n == 0:
+        return set()
+
     english_words = nltk.corpus.words.words()
-    possible_words = [''.join(w)
-                      for w in itertools.permutations(word, n)]
+    possible_words = [
+        ''.join(w)
+        for w in itertools.permutations(word, n)
+    ]
 
     print(f'Possible English words: {len(english_words):,} words')
-    print(f'Searching for {n}-letter word in '
-          f'{len(possible_words):,} possible words.\n')
+    print(
+        f'Searching for {n}-letter word in '
+        f'{len(possible_words):,} possible words.\n',
+    )
 
     answers = set()
 
