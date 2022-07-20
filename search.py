@@ -15,15 +15,19 @@
 import itertools
 import nltk
 
-from typing import Optional
-from typing import Set
 
+def find_word(word: str, n: int, exclude: set[str] | None = None) -> set[str]:
+    """Finds all possible words of length n that can be created from `word`.
 
-def find_word(
-    word: str,
-    n: int,
-    exclude: Optional[Set[str]] = None
-) -> Set[str]:
+    Args:
+        word (str): Word to search.
+        n (int): Length of words to find.
+        exclude (set[str] | None, optional): List of results
+            to exclude from result.  Defaults to None.
+
+    Returns:
+        set[str]: Set of all possible words of length `n` in `word`.
+    """
     english_words = nltk.corpus.words.words()
     possible_words = [''.join(w)
                       for w in itertools.permutations(word, n)]
