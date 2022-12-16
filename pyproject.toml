@@ -1,10 +1,135 @@
-[build-system]
-requires = [
-  "setuptools >= 40.9.0",
-  "wheel",
-]
-build-backend = "setuptools.build_meta"
+[tool.poetry]
+name = "word_sauce"
+version = "2.0.0"
+description = "A word sauce puzzle"
+license = "Apache-2.0"
 
-[tool.pep8]
-max_line_length = 82
-ignore = ["E251", "E701"]
+authors = ["Victor I. Afolabi <javafolabi@gmail.com>"]
+maintainers = [
+  "Victor I. Afolabi <javafolabi@gmail.com>",
+]
+
+readme = "README.md"
+repository = "https://github.com/victor-iyi/word_sauce"
+keywords = ["game", "word_sauce", "puzzle"]
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "License :: OSI Approved :: Apache Software License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: POSIX",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+
+packages = [
+  { include = "word_sauce", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.7"
+
+# Natural Language Toolkit.
+nltk = "^3.8"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+# Automatically format Python code to PEP 8 style guide.
+autopep8 = "^2.0.0"
+# The modular source checker.
+flake8 = { version = "*", python = ">=3.8" }
+# Optional static typing for Python.
+mypy = "^0.991"
+# Managing and maintaining pre-commit hooks.
+pre-commit = "^2.20.0"
+# Python style guide checker.
+pycodestyle = "^2.10.0"
+# Generic viirtualenv management and test cli tool.
+tox = { version = "^4.0.11", python = "~=3.7" }
+# A tool to automatically upgrade syntax for newer versions.
+pyupgrade = "^3.3.1"
+# Formats docstrings to follow PEP 257
+docformatter = {version = "^1.5.0", extras = ["tomli"], python = ">=3.7, <4"}
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+# A coverage plugin to provide sensible default settings.
+covdefaults = "^2.2.2"
+# pytest: simple powerful testing with Python.
+pytest = "^7.2.0"
+# Pytest plugin for measuring coverage.
+pytest-cov = "^4.0.0"
+
+# entry point.
+[tool.poetry.scripts]
+word_sauce = "main:main"
+
+[tool.poetry.urls]
+"Bug Tracker"  = "https://github.com/victor-iyi/word_sauce/issues"
+
+# Poetry build system. See: https://python-poetry.org/docs/pyproject
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# Pytests
+[tool.pytest.ini_options]
+filterwarnings = [
+  "ignore::DeprecationWarning",
+]
+
+# Docformatter.
+[tool.docformatter]
+recursive = true
+blank = true
+
+# Style hinting.
+[tool.mypy]
+files = "src"
+mypy_path = "src"
+namespace_packages = true
+explicit_package_bases = true
+strict = true
+check_untyped_defs = true
+ignore_missing_imports = true
+disallow_any_generics = true
+disallow_incomplete_defs = true
+implicit_reexport = false
+no_implicit_optional = true
+show_error_codes = true
+show_column_numbers = true
+# show_error_content = true
+warn_unused_configs = true
+warn_unused_ignores = true
+# warn_redundant_cast = true
+warn_return_any = true
+warn_unreachable = true
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
+
+# Pyright Type Checking.
+[tool.pyright]
+reportOptionalCall = "none"
+reportGeneralTypeIssues = "none"
+reportOptionalMemberAccess = "none"
+
+# Coverage report.
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "def __repr__",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.",
+]
+
+[tool.coverage.run]
+plugin = "covdefaults"
