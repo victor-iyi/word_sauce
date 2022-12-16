@@ -12,11 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import itertools
+from typing import Optional
+from typing import Set
 
 import nltk
 
 
-def find_word(word: str, n: int, exclude: set[str] | None = None) -> set[str]:
+def find_word(
+    word: str, n: int,
+    exclude: Optional[Set[str]] = None,
+) -> Set[str]:
     """Finds all possible words of length n that can be created from `word`.
 
     Args:

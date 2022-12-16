@@ -31,7 +31,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.9"
+python = ">=3.7"
 
 # Natural Language Toolkit.
 nltk = "^3.8"
@@ -52,6 +52,10 @@ pre-commit = "^2.20.0"
 pycodestyle = "^2.10.0"
 # Generic viirtualenv management and test cli tool.
 tox = { version = "^4.0.11", python = "~=3.7" }
+# A tool to automatically upgrade syntax for newer versions.
+pyupgrade = "^3.3.1"
+# Formats docstrings to follow PEP 257
+docformatter = {version = "^1.5.0", extras = ["tomli"], python = ">=3.7, <4"}
 
 [tool.poetry.group.test]
 optional = true
@@ -81,6 +85,11 @@ build-backend = "poetry.core.masonry.api"
 filterwarnings = [
   "ignore::DeprecationWarning",
 ]
+
+# Docformatter.
+[tool.docformatter]
+recursive = true
+blank = true
 
 # Style hinting.
 [tool.mypy]

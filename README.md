@@ -16,6 +16,9 @@
 
 # Word Sauce
 
+[![style | google](https://img.shields.io/badge/%20style-google-3666d6.svg)](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings)
+![GitHub](https://img.shields.io/github/license/victor-iyi/word_sauce)
+
 A program to play the mobile game [Word Sauce].
 
 [Word Sauce]: https://www.crazygames.com/game/word-sauce
