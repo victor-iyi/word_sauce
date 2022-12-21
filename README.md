@@ -16,7 +16,12 @@
 
 # Word Sauce
 
-A program to play the mobile game "Word Sauce".
+[![style | google](https://img.shields.io/badge/%20style-google-3666d6.svg)](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings)
+![GitHub](https://img.shields.io/github/license/victor-iyi/word_sauce)
+
+A program to play the mobile game [Word Sauce].
+
+[Word Sauce]: https://www.crazygames.com/game/word-sauce
 
 ## Usage
 
@@ -62,17 +67,32 @@ Found 8 possible words.
 {'merl', 'orle', 'mole', 'omer', 'mero', 'more', 'lore', 'role'}
 ```
 
+## Troubleshooting
+
+If `nltk` fails to load `corpora/words`, run the following command to download
+the resource.
+
+```sh
+python3 -m nltk.downloader words
+```
+
+For more information, visit <https://www.nltk.org/data.html>.
+
 ## Contribution
 
 You are very welcome to modify and use them in your own projects.
 
-Please keep a link to the [original repository]. If you have made a fork with substantial modifications that you feel may be useful, then please [open a new issue on GitHub][issue] with a link and short description.
+Please keep a link to the [original repository]. If you have made a fork with
+substantial modifications that you feel may be useful, then please
+[open a new issue on GitHub][issue] with a link and short description.
 
 [original repository]: https://https://github.com/victor-iyi/word_sauce
 [issue]: https://github.com/victor-iyi/word_sauce/issues
 
 ## License (Apache 2.0)
 
-This project is opened under the [Apache 2.0](./LICENSE) which allows very broad use for both private and commercial purposes.
+This project is opened under the [Apache 2.0](./LICENSE) which allows very broad
+use for both private and commercial purposes.
 
-A few of the images used for demonstration purposes may be under copyright. These images are included under the "fair useage" laws.
+A few of the images used for demonstration purposes may be under copyright.
+These images are included under the "fair useage" laws.
