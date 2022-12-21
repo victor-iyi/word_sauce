@@ -73,7 +73,7 @@ If `nltk` fails to load `corpora/words`, run the following command to download
 the resource.
 
 ```sh
-python3 -c 'import nltk; nltk.download("words")'
+python3 -m nltk.downloader words
 ```
 
 For more information, visit <https://www.nltk.org/data.html>.

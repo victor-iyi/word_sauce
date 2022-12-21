@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies with poetry
         run: |
           poetry install --with dev,test
-          poetry run python3 -c "import nltk; nltk.download('words')"
+          poetry run python -m nltk.downloader words
 
       - name: Lint with flake8
         run: |
