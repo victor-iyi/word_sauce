@@ -11,6 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from typing import Set
+from typing import Tuple
+
 import pytest
 from word_sauce.search import find_word
 
@@ -32,7 +35,7 @@ from word_sauce.search import find_word
     ),
 )
 def test_find_word(
-    word: str, n: int, expected: tuple[int, set[str]],
+    word: str, n: int, expected: Tuple[int, Set[str]],
 ) -> None:
     answers = find_word(word, n, None)
     assert len(answers) == expected[0]
@@ -50,8 +53,8 @@ def test_find_word(
     ),
 )
 def test_exclude(
-    word: str, n: int, exclude: set[str],
-    expected: tuple[int, set[str]],
+    word: str, n: int, exclude: Set[str],
+    expected: Tuple[int, Set[str]],
 ) -> None:
     words = find_word(word, n, exclude)
     assert len(words) == expected[0]
