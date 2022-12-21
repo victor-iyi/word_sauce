@@ -30,7 +30,9 @@ jobs:
           key: ${{ runner.os }}-poetry-${{ hashFiles('poetry.lock') }}
 
       - name: Install dependencies with poetry
-        run: poetry install --with dev,test
+        run: |
+          poetry install --with dev,test
+          python -c "import nltk; nltk.download('words')"
 
       - name: Lint with flake8
         run: |
