@@ -16,6 +16,7 @@
 
 # Word Sauce
 
+[![CI](https://github.com/victor-iyi/word_sauce/actions/workflows/ci.yaml/badge.svg)](https://github.com/victor-iyi/word_sauce/actions/workflows/ci.yaml)
 [![style | google](https://img.shields.io/badge/%20style-google-3666d6.svg)](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings)
 ![GitHub](https://img.shields.io/github/license/victor-iyi/word_sauce)
 
